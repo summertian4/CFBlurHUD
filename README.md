@@ -53,3 +53,6 @@ CFBlurHUD是基于UIVisualEffectView实现的指示器，拥有虚化模糊效�
 
 # 提示
 如果你有需要更改CFBlurHUD的代码，请尽量不要更改CFBlurHUD的边框。因为UIVisualEffectView的Light样式在背景是白色情况下会难以被看见。
+
+# 反馈
+如果有什么修改建议，可以发送邮件到coderfish@163.com，也欢迎到[我的博客](http://zhoulingyu.com)
