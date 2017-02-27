@@ -30,7 +30,7 @@
         }
         case 1:
         {
-            [CFBlurHUD show:@"提示信息如果较长会自动调节HUD高度"];
+            [CFBlurHUD show:@"提示信息如果较长会自动调节HUD高度XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"];
             break;
         }
         case 2:

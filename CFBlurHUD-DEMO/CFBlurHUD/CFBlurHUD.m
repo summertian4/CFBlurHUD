@@ -10,33 +10,49 @@
 #import "UIView+Extension.h"
 #import "NSString+CFNSStringExt.h"
 
-#define CFBlurHUDBorderColor [UIColor colorWithRed:98/255.0 green:98/255.0 blue:98/255.0 alpha:0.5]
 #define CFBlurHUDWidth 150
 #define CFBlurHUDMargin 12
 #define CFBlurHUDMessageHeight 50
 #define CFBlurHUDMessageFont [UIFont boldSystemFontOfSize:14]
-#define CFBlurHUDMessageColor [UIColor colorWithRed:110/255.0 green:110/255.0 blue:110/255.0 alpha:1]
-#define CFBlurHUDActivityIndicatorColor [UIColor colorWithRed:142/255.0 green:155/255.0 blue:236/255.0 alpha:1]
 
 @interface CFBlurHUD ()
+
 @property (nonatomic, weak) UIActivityIndicatorView *aivLoading;
 @property (nonatomic, weak) UILabel *lblMessage;
 @property (nonatomic, weak) UIImageView *imgSuccess;
 @property (nonatomic, weak) UIImageView *imgFaild;
 @property (nonatomic, copy) NSString *message;
 
+@property (nonatomic, strong) UIColor *borderColor;
+@property (nonatomic, strong) UIColor *messageColor;
+@property (nonatomic, strong) UIColor *activityIndicatorColor;
+
+
 @end
 
 @implementation CFBlurHUD
 
-+(CFBlurHUD *)hud {
++ (CFBlurHUD *)hud {
     __strong static CFBlurHUD *sharedManager;
         static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedManager = [[CFBlurHUD alloc] init];
+        sharedManager.borderColor = [UIColor colorWithRed:98/255.0 green:98/255.0 blue:98/255.0 alpha:0.5];
+        sharedManager.messageColor = [UIColor colorWithRed:110/255.0 green:110/255.0 blue:110/255.0 alpha:1];
+        sharedManager.activityIndicatorColor = [UIColor colorWithRed:142/255.0 green:155/255.0 blue:236/255.0 alpha:1];
     });
     
     return sharedManager;
+}
+
+#pragma mark - =======================Public=======================
+
++ (void)configBorderColor:(UIColor *)color {
+    [self hud].borderColor = color;
+}
+
++ (void)configMessageColor:(UIColor *)color {
+    [self hud].messageColor = color;
 }
 
 + (void)show:(NSString *)message {
@@ -120,13 +136,15 @@
     }];
 }
 
+#pragma mark - =======================Life Cycle=======================
+
 - (instancetype)init {
     if (self = [super initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]]) {
         self.layer.masksToBounds = YES;
         self.layer.cornerRadius = 20.0;
 
         self.layer.borderWidth = 1.0;
-        self.layer.borderColor = [CFBlurHUDBorderColor CGColor];
+        self.layer.borderColor = [_borderColor CGColor];
     }
     return self;
 }
@@ -175,12 +193,23 @@
     }
 }
 
-#pragma mark - =======================懒加载=======================
+#pragma mark - =======================Getter Setter=======================
+
+- (void)setBorderColor:(UIColor *)borderColor {
+    _borderColor = borderColor;
+    self.layer.borderColor = [_borderColor CGColor];
+}
+
+- (void)setMessageColor:(UIColor *)messageColor {
+    _messageColor = messageColor;
+    self.lblMessage.textColor = self.messageColor;
+}
+
 - (UIActivityIndicatorView *)aivLoading {
     if (_aivLoading == nil) {
         UIActivityIndicatorView *aivLoading = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         [aivLoading startAnimating];
-        aivLoading.color = CFBlurHUDActivityIndicatorColor;
+        aivLoading.color = self.activityIndicatorColor;
         [self addSubview:aivLoading];
         _aivLoading = aivLoading;
     }
@@ -192,7 +221,7 @@
         UILabel *lblMessage = [[UILabel alloc] init];
         lblMessage.font = CFBlurHUDMessageFont;
         lblMessage.numberOfLines = 0;
-        lblMessage.textColor = CFBlurHUDMessageColor;
+        lblMessage.textColor = self.messageColor;
         lblMessage.textAlignment = NSTextAlignmentCenter;
         [self addSubview:lblMessage];
         _lblMessage = lblMessage;
