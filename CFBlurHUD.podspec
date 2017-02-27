@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "CFBlurHUD"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "A activity indicator with blur effect on iOS."
   s.homepage     = "https://github.com/summertian4/CFBlurHUD"
 
@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   
-  s.ios.deployment_target = "7.0"
+  s.ios.deployment_target = "8.0"
 
   s.source       = { :git => "https://github.com/summertian4/CFBlurHUD.git", :tag => "#{s.version}" }
 
