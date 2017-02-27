@@ -10,11 +10,19 @@ CFBlurHUD 是基于 UIVisualEffectView 实现的指示器，拥有虚化模糊�
 
 # 安装
 
+1. Cocoapods
+
+```
+pod 'CFBlurHUD'
+```
+
+2. 手动安装
+
 将 CFBlurHUD 下的所有内容拖入你的项目中
 
 # 使用
 
-普通Loading指示器
+普通 Loading 指示器
 
 ```
 [CFBlurHUD show:@"你的信息"];
@@ -32,7 +40,7 @@ CFBlurHUD 是基于 UIVisualEffectView 实现的指示器，拥有虚化模糊�
 [CFBlurHUD showFaild:@"错误"];
 ```
 
-如果你不希望显示信息，参数可以填入nil或者@""
+如果你不希望显示信息，参数可以填入 `nil` 或者 `@""`
 
 ```
 [CFBlurHUD show:@""];
@@ -42,17 +50,13 @@ CFBlurHUD 是基于 UIVisualEffectView 实现的指示器，拥有虚化模糊�
 
 # 自定义
 
-如果你不喜欢CFBlurHUD的颜色，可以在CFBlurHUD.m的宏定义部分更改参数。
+如果你不喜欢 CFBlurHUD 的颜色，提供以下方法：
 
 ```
-#define CFBlurHUDBorderColor [UIColor colorWithRed:98/255.0 green:98/255.0 blue:98/255.0 alpha:0.5]
-#define CFBlurHUDMessageColor [UIColor colorWithRed:110/255.0 green:110/255.0 blue:110/255.0 alpha:1]
-#define CFBlurHUDActivityIndicatorColor [UIColor colorWithRed:142/255.0 green:155/255.0 blue:236/255.0 alpha:1]
++ (void)configBorderColor:(UIColor *)color;
+
++ (void)configMessageColor:(UIColor *)color;
 ```
-
-# 提示
-
-如果你有需要更改CFBlurHUD的代码，请尽量不要更改CFBlurHUD的边框。因为UIVisualEffectView的Light样式在背景是白色情况下会难以被看见。
 
 # 反馈
 
