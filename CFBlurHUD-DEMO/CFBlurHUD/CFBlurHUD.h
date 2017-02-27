@@ -37,4 +37,9 @@
  *  撤去指示器
  */
 + (void)dismiss;
+
++ (void)configBorderColor:(UIColor *)color;
+
++ (void)configMessageColor:(UIColor *)color;
+
 @end

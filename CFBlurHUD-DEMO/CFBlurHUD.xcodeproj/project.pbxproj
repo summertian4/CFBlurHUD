@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8204AC7A1BEF51C20027B56C /* CFBlurHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8204AC731BEF51C20027B56C /* CFBlurHUD.m */; settings = {ASSET_TAGS = (); }; };
-		8204AC7B1BEF51C20027B56C /* faild.png in Resources */ = {isa = PBXBuildFile; fileRef = 8204AC741BEF51C20027B56C /* faild.png */; settings = {ASSET_TAGS = (); }; };
-		8204AC7C1BEF51C20027B56C /* NSString+CFNSStringExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8204AC761BEF51C20027B56C /* NSString+CFNSStringExt.m */; settings = {ASSET_TAGS = (); }; };
-		8204AC7D1BEF51C20027B56C /* success.png in Resources */ = {isa = PBXBuildFile; fileRef = 8204AC771BEF51C20027B56C /* success.png */; settings = {ASSET_TAGS = (); }; };
-		8204AC7E1BEF51C20027B56C /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8204AC791BEF51C20027B56C /* UIView+Extension.m */; settings = {ASSET_TAGS = (); }; };
-		821C13BB1BEF21480058E8AF /* CFTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C13BA1BEF21480058E8AF /* CFTableController.m */; settings = {ASSET_TAGS = (); }; };
+		8204AC7A1BEF51C20027B56C /* CFBlurHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8204AC731BEF51C20027B56C /* CFBlurHUD.m */; };
+		8204AC7B1BEF51C20027B56C /* faild.png in Resources */ = {isa = PBXBuildFile; fileRef = 8204AC741BEF51C20027B56C /* faild.png */; };
+		8204AC7C1BEF51C20027B56C /* NSString+CFNSStringExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 8204AC761BEF51C20027B56C /* NSString+CFNSStringExt.m */; };
+		8204AC7D1BEF51C20027B56C /* success.png in Resources */ = {isa = PBXBuildFile; fileRef = 8204AC771BEF51C20027B56C /* success.png */; };
+		8204AC7E1BEF51C20027B56C /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 8204AC791BEF51C20027B56C /* UIView+Extension.m */; };
+		821C13BB1BEF21480058E8AF /* CFTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 821C13BA1BEF21480058E8AF /* CFTableController.m */; };
 		82DECC381BEF1D7F00AA196F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DECC371BEF1D7F00AA196F /* main.m */; };
 		82DECC3B1BEF1D7F00AA196F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 82DECC3A1BEF1D7F00AA196F /* AppDelegate.m */; };
 		82DECC411BEF1D7F00AA196F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82DECC3F1BEF1D7F00AA196F /* Main.storyboard */; };
@@ -261,6 +261,7 @@
 				TargetAttributes = {
 					82DECC321BEF1D7F00AA196F = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = A59RPD6993;
 					};
 					82DECC4B1BEF1D7F00AA196F = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -470,9 +471,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A59RPD6993;
 				INFOPLIST_FILE = CFBlurHUD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coderfish.ios.CFBlurHUD;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhoulingyu.ios.CFBlurHUD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -481,9 +483,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A59RPD6993;
 				INFOPLIST_FILE = CFBlurHUD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coderfish.ios.CFBlurHUD;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zhoulingyu.ios.CFBlurHUD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
